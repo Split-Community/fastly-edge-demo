@@ -177,7 +177,7 @@ async function handleHomePage(url, config) {
     <li>Run <code>./deploy.sh</code> to create stores and deploy the service</li>
     <li>Run <code>npm run sync</code> to synchronize feature flag data from Harness FME to KV Store</li>
     <li>Visit <code>/get-treatment</code> to test feature flag evaluation</li>
-    <li>Set up a cron job or GitHub Action to run <code>npm run sync</code> periodically</li>
+    <li>Set up a cron job to run <code>npm run sync</code> periodically</li>
   </ol>
 
   <h2>How It Works</h2>
