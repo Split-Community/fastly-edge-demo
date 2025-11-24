@@ -32,10 +32,10 @@ SPLIT_SDK_KEY="386kotal30nolp5lkffngl2ji9vcvn9k3us8"
 FEATURE_FLAG_NAME="my-feature-flag"
 
 # If you already have stores/service created, fill these in to skip creation:
-EXISTING_KV_STORE_ID="b9zvoaz9ojblxjyafa0bfl"
-EXISTING_CONFIG_STORE_ID="IpmEqrZOwO9JJUlKymKKH6"
-EXISTING_SECRET_STORE_ID="r11rx2jzLXABDPQKXalkXY"
-EXISTING_SERVICE_ID="5tvSejnjUSL5WXzA4TXUMh"
+EXISTING_KV_STORE_ID=""
+EXISTING_CONFIG_STORE_ID=""
+EXISTING_SECRET_STORE_ID=""
+EXISTING_SERVICE_ID=""
 
 ################################################################################
 # Script starts here - no need to edit below
