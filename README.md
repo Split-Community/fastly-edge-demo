@@ -28,7 +28,7 @@ Fastly Compute is request-driven and doesn't support scheduled tasks (unlike Clo
 - Secure SDK key storage using Fastly Secret Store
 - External synchronization script for updating feature flag data
 - Full Harness FME SDK support in `consumer_partial` mode
-- Status endpoint to verify KV Store connectivity
+
 
 ## Prerequisites
 
@@ -119,8 +119,7 @@ Test a feature flag evaluation:
 - Visit `/get-treatment?key=user-123&feature-flag=my-feature-flag`
 - Or use the interactive form on the homepage
 
-Check the status:
-- Visit `/status` to see KV Store connectivity and stored keys
+
 
 ## Development
 
@@ -217,14 +216,6 @@ Evaluate a feature flag for a user.
 curl "https://your-service.edgecompute.app/get-treatment?key=user-123&feature-flag=my-feature-flag"
 ```
 
-### `GET /status`
-
-Check KV Store connectivity and view stored keys.
-
-**Example:**
-```bash
-curl "https://your-service.edgecompute.app/status"
-```
 
 ## Troubleshooting
 
@@ -245,7 +236,7 @@ curl "https://your-service.edgecompute.app/status"
 - Run `npm run sync` to populate the KV Store
 - Check sync script output for errors
 - Verify your Harness FME SDK key is valid
-- Visit `/status` endpoint to see if data was written
+
 
 ### Sync script failing
 
