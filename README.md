@@ -77,7 +77,7 @@ The deployment script will create all necessary stores and deploy your service:
 chmod +x deploy.sh
 ./deploy.sh
 ```
-
+(if this gets stuck at the service deployment step - you may need to deploy the service seperately and then add the service id to the script and re-run for it to complete the configuration)
 The script will:
 1. Create KV Store, Config Store, and Secret Store
 2. Store your Harness FME SDK key securely in Secret Store
