@@ -1,0 +1,16 @@
+# Dependencies
+/node_modules
+
+# Build outputs
+/bin
+/pkg
+
+# Local development data
+/kv-store-data
+/secret-store-data
+
+# Environment variables (contains secrets)
+.env
+
+# Deployment logs
+deploy_output.txt

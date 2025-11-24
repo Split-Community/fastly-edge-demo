@@ -1,0 +1,33 @@
+# This file describes a Fastly Compute package. To learn more visit:
+# https://www.fastly.com/documentation/reference/compute/fastly-toml
+
+authors = [""]
+cloned_from = "https://github.com/fastly/compute-starter-kit-javascript-default"
+description = ""
+language = "javascript"
+manifest_version = 3
+name = "split-app"
+service_id = "5tvSejnjUSL5WXzA4TXUMh"
+
+[local_server]
+
+  [local_server.config_stores]
+
+    [local_server.config_stores.split-config]
+      format = "inline-toml"
+
+  [local_server.kv_stores]
+
+    [local_server.kv_stores.split-storage]
+      file = "kv-store-data/split-storage"
+      format = "json"
+
+  [local_server.secret_stores]
+
+    [local_server.secret_stores.SPLIT_SDK_KEY]
+      file = "secret-store-data/SPLIT_SDK_KEY"
+      format = "json"
+
+[scripts]
+  build = "npm run build"
+  post_init = "npm install"

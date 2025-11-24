@@ -1,0 +1,20 @@
+{
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "@fastly/js-compute": "^3.33.2",
+    "@splitsoftware/splitio-browserjs": "^1.6.0",
+    "@splitsoftware/splitio-sync-tools": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@fastly/cli": "^12.1.0"
+  },
+  "scripts": {
+    "build": "js-compute-runtime src/index.js bin/main.wasm",
+    "start": "fastly compute serve",
+    "deploy": "fastly compute publish --accept-defaults",
+    "sync": "node sync-to-kv.js"
+  }
+}
