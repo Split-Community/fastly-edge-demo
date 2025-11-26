@@ -63,16 +63,9 @@ export function SplitStorageWrapper(kvStore) {
     /** Get all keys with a given prefix */
     async getKeysByPrefix(prefix) {
       try {
-        // Note: Fastly KV Store list() method supports prefix filtering
-        const keys = [];
-        const cursor = await kvStore.list({ prefix });
-
-        // Iterate through the cursor to collect all keys
-        for await (const entry of cursor) {
-          keys.push(entry.key);
-        }
-
-        return keys;
+        // Note: Fastly KV Store list() returns { list: string[], cursor: string | undefined }
+        const result = await kvStore.list({ prefix });
+        return result.list || [];
       } catch (error) {
         console.error(`Error getting keys by prefix ${prefix}:`, error);
         return [];
