@@ -64,8 +64,19 @@ export function SplitStorageWrapper(kvStore) {
     async getKeysByPrefix(prefix) {
       try {
         // Note: Fastly KV Store list() returns { list: string[], cursor: string | undefined }
-        const result = await kvStore.list({ prefix });
-        return result.list || [];
+        // We need to paginate through all results
+        const allKeys = [];
+        let cursor;
+
+        do {
+          const result = await kvStore.list({ prefix, cursor });
+          if (result.list && result.list.length > 0) {
+            allKeys.push(...result.list);
+          }
+          cursor = result.cursor;
+        } while (cursor);
+
+        return allKeys;
       } catch (error) {
         console.error(`Error getting keys by prefix ${prefix}:`, error);
         return [];
