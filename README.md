@@ -42,7 +42,7 @@ Fastly Compute is request-driven and doesn't support scheduled tasks (unlike Clo
 ### 1. Clone and Install
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/Split-Community/fastly-edge-demo.git
 cd split-app
 npm install
 ```
